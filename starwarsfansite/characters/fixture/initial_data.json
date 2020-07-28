@@ -1,0 +1,144 @@
+[
+    {
+        "model": "characters.planet",
+        "pk": 1,
+        "fields": {
+            "name": "Alderaan",
+            "climate": "temperate",
+            "terrain": "grasslands, mountains",
+            "population": 2000000000
+        }
+    },
+    {
+        "model": "characters.planet",
+        "pk": 2,
+        "fields": {
+            "name": "Yavin IV",
+            "climate": "temperate, tropical",
+            "terrain": "jungle, rainforests",
+            "population": 1000
+        }
+    },
+    {
+        "model": "characters.planet",
+        "pk": 3,
+        "fields": {
+            "name": "Dagobah",
+            "climate": "murky",
+            "terrain": "swamp, jungle",
+            "population": null
+        }
+    },
+    {
+        "model": "characters.planet",
+        "pk": 4,
+        "fields": {
+            "name": "Kashyyyk",
+            "climate": "jungle, forests, lakes, rivers",
+            "terrain": "tropical",
+            "population": 45000000
+        }
+    },
+    {
+        "model": "characters.movie",
+        "pk": 1,
+        "fields": {
+            "title": "A New Hope",
+            "episode_id": 4,
+            "opening_crawl": "It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.  During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.  Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy....",
+            "release_year": 1977,
+            "director": "George Lucas",
+            "producers": "Gary Kurtz, Rick McCallum",
+            "planets": [
+                1,
+                2
+            ]
+        }
+    },
+    {
+        "model": "characters.movie",
+        "pk": 2,
+        "fields": {
+            "title": "Revenge of the Sith",
+            "episode_id": 3,
+            "opening_crawl": "War! The Republic is crumbling under attacks by the ruthless Sith Lord, Count Dooku. There are heroes on both sides. Evil is everywhere.  In a stunning move, the fiendish droid leader, General Grievous, has swept into the Republic capital and kidnapped Chancellor Palpatine, leader of the Galactic Senate.  As the Separatist Droid Army attempts to flee the besieged capital with their valuable hostage, two Jedi Knights lead a desperate mission to rescue the captive Chancellor....",
+            "release_year": 2005,
+            "director": "George Lucas",
+            "producers": "Rick McCallum",
+            "planets": [
+                2,
+                3
+            ]
+        }
+    },
+    {
+        "model": "characters.movie",
+        "pk": 3,
+        "fields": {
+            "title": "The Empire Strikes Back",
+            "episode_id": 5,
+            "opening_crawl": "It is a dark time for the Rebellion. Although the Death Star has been destroyed, Imperial troops have driven the Rebel forces from their hidden base and pursued them across the galaxy.  Evading the dreaded Imperial Starfleet, a group of freedom fighters led by Luke Skywalker has established a new secret base on the remote ice world of Hoth.  The evil lord Darth Vader, obsessed with finding young Skywalker, has dispatched thousands of remote probes into the far reaches of space....",
+            "release_year": 1980,
+            "director": "Irvin Kershner",
+            "producers": "Gary Kurtz, Rick McCallum",
+            "planets": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "characters.character",
+        "pk": 1,
+        "fields": {
+            "name": "Luke Skywalker",
+            "birth_year": "19BBY",
+            "genre": "male",
+            "movies": [
+                1,
+                2,
+                3
+            ]
+        }
+    },
+    {
+        "model": "characters.character",
+        "pk": 2,
+        "fields": {
+            "name": "Darth Vader",
+            "birth_year": "41.9BBY",
+            "genre": "male",
+            "movies": [
+                1,
+                2,
+                3
+            ]
+        }
+    },
+    {
+        "model": "characters.character",
+        "pk": 3,
+        "fields": {
+            "name": "Leia Organa",
+            "birth_year": "19BBY",
+            "genre": "male",
+            "movies": [
+                1,
+                2,
+                3
+            ]
+        }
+    },
+    {
+        "model": "characters.character",
+        "pk": 4,
+        "fields": {
+            "name": "Owen Lars",
+            "birth_year": "52BBY",
+            "genre": "male",
+            "movies": [
+                1,
+                2
+            ]
+        }
+    }
+]
