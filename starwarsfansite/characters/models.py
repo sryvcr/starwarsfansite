@@ -5,7 +5,7 @@ class Planet(models.Model):
     name = models.CharField(max_length=100)
     climate = models.CharField(max_length=50)
     terrain = models.CharField(max_length=100)
-    population = models.IntegerField(null=True)
+    population = models.BigIntegerField(null=True)
 
     def __str__(self):
         return self.name
