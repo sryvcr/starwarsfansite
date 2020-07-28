@@ -5,6 +5,10 @@ def get_planet(_id):
     return Planet.objects.get(id=_id)
 
 
+def get_planets_by_ids(ids_list):
+    return Planet.objects.filter(id__in=ids_list)
+
+
 def create_planet(
     name,
     climate,
@@ -41,9 +45,9 @@ def create_movie(
         release_year=release_year,
         director=director,
         producers=producers,
-        planets=planets,
     )
     new_movie.save()
+    new_movie.planets.set(planets)
     return new_movie
 
 
