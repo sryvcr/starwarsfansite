@@ -29,6 +29,10 @@ def get_movie(_id):
     return Movie.objects.get(id=_id)
 
 
+def get_movies_by_ids(ids_list):
+    return Movie.objects.filter(id__in=ids_list)
+
+
 def create_movie(
     title,
     episode_id,
@@ -62,10 +66,10 @@ def create_character(
     movies,
 ):
     new_character = Character(
-        name,
-        birth_year,
-        genre,
-        movies,
+        name=name,
+        birth_year=birth_year,
+        genre=genre,
     )
     new_character.save()
+    new_character.movies.set(movies)
     return new_character

@@ -12,6 +12,7 @@ from .data import (
     create_movie,
     create_planet,
     get_planets_by_ids,
+    get_movies_by_ids,
 )
 
 
@@ -104,7 +105,7 @@ class InsertMovie(relay.ClientIDMutation):
         producers,
         planets,
         client_mutation_id=None
-    ):  
+    ):
         planets_list = get_planets_by_ids(planets)
         new_movie = create_movie(
             title,
@@ -116,3 +117,28 @@ class InsertMovie(relay.ClientIDMutation):
             planets_list,
         )
         return InsertMovie(movie=new_movie)
+
+
+class InsertCharacter(relay.ClientIDMutation):
+    class Input:
+        name = graphene.String(required=True)
+        birth_year = graphene.String(required=True)
+        genre = graphene.String(required=True)
+        movies = graphene.List(graphene.Int, required=True)
+
+    character = graphene.Field(Character)
+
+    @classmethod
+    def mutate_and_get_payload(
+        cls,
+        root,
+        info,
+        name,
+        birth_year,
+        genre,
+        movies,
+        client_mutation_id=None
+    ):
+        movies_list = get_movies_by_ids(movies)
+        new_character = create_character(name, birth_year, genre, movies_list)
+        return InsertCharacter(character=new_character)
